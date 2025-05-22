@@ -4,6 +4,8 @@
 
 [hono](https://github.com/honojs/hono) client for [alova](https://alova.js.org/zh-CN/)
 
+[中文文档](./readme-zh.md)
+
 Using [sxzz/ts-starter](https://github.com/sxzz/ts-starter) as the starter template
 
 Features:
