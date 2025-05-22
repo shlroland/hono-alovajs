@@ -38,7 +38,6 @@
     "release": "bumpp && pnpm publish",
     "all-publish": "pnpm run publish:npm && pnpm run publish:jsr",
     "publish:npm": "pnpm publish",
-    "publish:jsr": "pnpx jsr publish",
     "prepublishOnly": "pnpm run build"
   },
   "peerDependencies": {
