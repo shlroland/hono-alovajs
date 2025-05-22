@@ -1,6 +1,6 @@
 {
   "name": "hono-alovajs-client",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "packageManager": "pnpm@10.11.0",
   "description": "The hono client integrated with alova",
   "type": "module",
