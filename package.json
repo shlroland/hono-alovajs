@@ -2,7 +2,7 @@
   "name": "hono-alovajs-client",
   "version": "0.0.1",
   "packageManager": "pnpm@10.11.0",
-  "description": "Integrate alova with hono",
+  "description": "The hono client integrated with alova",
   "type": "module",
   "license": "MIT",
   "homepage": "https://github.com/shlroland/hono-alovajs-client#readme",

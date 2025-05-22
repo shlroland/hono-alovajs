@@ -2,29 +2,30 @@
 
 [![Unit Test](https://github.com/shlroland/hono-alovajs-client/actions/workflows/unit-test.yml/badge.svg)](https://github.com/shlroland/hono-alovajs-client/actions/workflows/unit-test.yml)
 
-[hono](https://github.com/honojs/hono) client for [alova](https://alova.js.org/zh-CN/)
+[hono](https://github.com/honojs/hono) 的 [alova](https://alova.js.org/zh-CN/) 客户端
 
-Using [sxzz/ts-starter](https://github.com/sxzz/ts-starter) as the starter template
+使用 [sxzz/ts-starter](https://github.com/sxzz/ts-starter) 作为启动模板
 
-Features:
+功能点:
 
-- Maintains the original client request method of `hono`
-- Preserves type-safe hono rpc calling style
-- Uses `alova` as the request library
-- Supports all request strategy features of `alova`
+- 保留 `hono` 原有客户端请求方式不变
+- 保留类型安全的 hono rpc 调用风格
+- 使用 `alova` 作为请求库
+- 支持 `alova` 所有请求策略功能
 
-## Installation
+
+## 安装
 
 ```bash
 pnpm add hono-alovajs-client
 ```
 
-## Usage
+## 使用
 
 ```ts
+import { hca } from 'hono-alovajs-client'
 import { createAlova } from 'alova'
 import adapterFetch from 'alova/fetch'
-import { hca } from 'hono-alovajs-client'
 import type { App } from './server'
 
 const alova = createAlova({
@@ -38,10 +39,11 @@ const client = hca<App>(alova)
 const users = await client.users.alova.$get()
 ```
 
-### Notes
+### 注意事项
 
-- To maintain compatibility with `hono`, currently only supports `alova`'s `fetch` adapter or custom `fetch` adapter
-- Request methods like `Get` | `Post` | `Put` | `Delete` | `Head` | `Options` | `Patch` are provided by `alova`, while other methods like `url` are provided natively by `hono`
+- 为保持与 `hono` 兼容，目前仅支持 `alova` 的 `fetch` 适配器或者自制的 `fetch` 适配器
+-  `Get` | `Post` | `Put` | `Delete` | `Head` | `Options` | `Patch` 这些请求方法由 `alova` 提供，其余如 `url` 等方法由 `hono` 原生提供
+
 
 ## License
 
