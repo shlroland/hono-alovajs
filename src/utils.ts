@@ -1,10 +1,3 @@
-export const mergePath = (base: string, path: string) => {
-  base = base.replace(/\/+$/, '')
-  base = `${base}/`
-  path = path.replace(/^\/+/, '')
-  return base + path
-}
-
 export const upperMethodFirstLetter = (
   str: string,
 ): 'Get' | 'Post' | 'Put' | 'Delete' | 'Head' | 'Options' | 'Patch' => {
@@ -16,6 +9,15 @@ export const upperMethodFirstLetter = (
     | 'Head'
     | 'Options'
     | 'Patch'
+}
+
+// the functions below are copied from hono
+
+export const mergePath = (base: string, path: string) => {
+  base = base.replace(/\/+$/, '')
+  base = `${base}/`
+  path = path.replace(/^\/+/, '')
+  return base + path
 }
 
 export type ObjectType<T = unknown> = {
@@ -30,7 +32,8 @@ export function deepMerge<T>(target: T, source: Record<string, unknown>): T {
   if (!isObject(target) && !isObject(source)) {
     return source as T
   }
-  // @ts-expect-error 123
+
+  // @ts-expect-error ignore type error, this function is copied from hono
   const merged: ObjectType<T> = { ...target }
 
   // eslint-disable-next-line no-restricted-syntax

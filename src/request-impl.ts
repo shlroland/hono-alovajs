@@ -123,6 +123,8 @@ export class AlovaRequestImpl<A extends Alova<AlovaGenerics>> {
   }
 }
 
+// this ClientRequestImpl is copied from hono
+
 export class ClientRequestImpl {
   private url: string
   private method: string

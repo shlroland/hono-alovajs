@@ -82,6 +82,8 @@ export const hac = <
       return new URL(result)
     }
 
+    // =============the code above is copied from hono============
+
     const penultimate = lastParts[1]
 
     if (penultimate === '$alova' && method) {
@@ -91,6 +93,8 @@ export const hac = <
       const alovaRequest = new AlovaRequestImpl(path, alovaMethod, alova)
       return alovaRequest.apply(opts.args[0], opts.args[1], options)
     }
+
+    // =============the code below is copied from hono============
 
     if (method === 'ws') {
       const webSocketUrl = replaceUrlProtocol(

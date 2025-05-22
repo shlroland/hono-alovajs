@@ -11,30 +11,6 @@ import type { HonoBase } from 'hono/hono-base'
 import type { Endpoint, ResponseFormat, Schema } from 'hono/types'
 import type { HasRequiredKeys } from 'hono/utils/types'
 
-export type AlovaMethodCreateConfig<
-  AG extends AlovaGenerics = AlovaGenerics,
-  Responded = any,
-  Transformed = any,
-> = Partial<MethodRequestConfig> & AlovaMethodConfig<AG, Responded, Transformed>
-
-type ClientResponseOfEndpoint<T extends Endpoint = Endpoint> = T extends {
-  output: infer O
-  outputFormat: infer F
-  status: infer S
-}
-  ? ClientResponse<
-    O,
-    S extends number ? S : never,
-    F extends ResponseFormat ? F : never
-  >
-  : never
-
-type GetOutput<T extends Endpoint> = T extends {
-  output: infer O
-}
-  ? O
-  : never
-
 export type ClientRequest<S extends Schema> = {
   [M in keyof S]: S[M] extends Endpoint & {
     input: infer R
@@ -139,6 +115,31 @@ export type ClientRequest<S extends Schema> = {
       : never
     }
   }
+
+// types below are copied from alova and hono
+export type AlovaMethodCreateConfig<
+  AG extends AlovaGenerics = AlovaGenerics,
+  Responded = any,
+  Transformed = any,
+> = Partial<MethodRequestConfig> & AlovaMethodConfig<AG, Responded, Transformed>
+
+type ClientResponseOfEndpoint<T extends Endpoint = Endpoint> = T extends {
+  output: infer O
+  outputFormat: infer F
+  status: infer S
+}
+  ? ClientResponse<
+    O,
+    S extends number ? S : never,
+    F extends ResponseFormat ? F : never
+  >
+  : never
+
+type GetOutput<T extends Endpoint> = T extends {
+  output: infer O
+}
+  ? O
+  : never
 
 type PathToChain<
   Path extends string,
