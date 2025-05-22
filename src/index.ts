@@ -1,5 +1,2 @@
-export const foo = 'foo'
-
-export function fn(): void {
-  return
-}
+export { hca } from './client'
+export type { Client } from './types'

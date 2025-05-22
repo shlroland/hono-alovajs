@@ -1,20 +1,19 @@
 {
-  "name": "ts-starter",
+  "name": "hono-alovajs-client",
   "version": "0.0.0",
   "packageManager": "pnpm@10.11.0",
-  "description": "My awesome typescript library",
+  "description": "Integrate alova with hono",
   "type": "module",
   "license": "MIT",
-  "homepage": "https://github.com/sxzz/ts-starter#readme",
+  "homepage": "https://github.com/shlroland/hono-alovajs-client#readme",
   "bugs": {
-    "url": "https://github.com/sxzz/ts-starter/issues"
+    "url": "https://github.com/shlroland/hono-alovajs-client/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sxzz/ts-starter.git"
+    "url": "git+https://github.com/shlroland/hono-alovajs-client.git"
   },
-  "author": "三咲智子 Kevin Deng <sxzz@sxzz.moe>",
-  "funding": "https://github.com/sponsors/sxzz",
+  "author": "shlroland <shlroland1995@gmail.com>",
   "files": [
     "dist"
   ],
@@ -39,7 +38,13 @@
     "release": "bumpp && pnpm publish",
     "prepublishOnly": "pnpm run build"
   },
+  "peerDependencies": {
+    "alova": ">= 3.2.0",
+    "hono": ">= 4.5.0"
+  },
   "devDependencies": {
+    "@hono/node-server": "^1.14.2",
+    "@hono/zod-validator": "^0.5.0",
     "@sxzz/eslint-config": "^7.0.1",
     "@sxzz/prettier-config": "^2.2.1",
     "@types/node": "^22.15.19",
@@ -49,7 +54,8 @@
     "tsdown": "^0.11.11",
     "tsx": "^4.19.4",
     "typescript": "^5.8.3",
-    "vitest": "^3.1.3"
+    "vitest": "^3.1.3",
+    "zod": "^3.25.20"
   },
   "engines": {
     "node": ">=20.18.0"
