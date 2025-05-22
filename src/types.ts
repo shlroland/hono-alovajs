@@ -89,7 +89,7 @@ export type ClientRequest<S extends Schema> = {
   }
   : {}
   : {}) & {
-    alova: {
+    $alova: {
       [M in keyof S]: S[M] extends Endpoint & {
         input: infer R
       }

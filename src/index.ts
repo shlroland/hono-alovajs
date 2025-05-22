@@ -1,2 +1,2 @@
-export { hca } from './client'
+export { hac } from './client'
 export type { Client } from './types'

@@ -25,7 +25,7 @@ const createProxy = (callback: Callback, path: string[]) => {
   return proxy
 }
 
-export const hca = <
+export const hac = <
   T extends HonoBase<any, any, any>,
   A extends Alova<
     AlovaGenerics<any, any, FetchRequestInit, Response, Headers>
@@ -84,7 +84,7 @@ export const hca = <
 
     const penultimate = lastParts[1]
 
-    if (penultimate === 'alova' && method) {
+    if (penultimate === '$alova' && method) {
       const alovaMethod = upperMethodFirstLetter(method)
       const path = parts.slice(0, -1).join('/')
 

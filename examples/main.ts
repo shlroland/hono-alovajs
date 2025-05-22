@@ -1,6 +1,6 @@
 import { createAlova } from 'alova'
 import adapterFetch from 'alova/fetch'
-import { hca } from '../src/index'
+import { hac } from '../src/index'
 import type { App } from './server'
 
 const alova = createAlova({
@@ -9,8 +9,8 @@ const alova = createAlova({
   responded: (response) => response.json(),
 })
 
-const client = hca<App>(alova)
+const client = hac<App>(alova)
 
-const users = await client.users.alova.$get()
+const users = await client.users.$alova.$get()
 
 console.log(users)
